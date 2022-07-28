@@ -1,0 +1,8 @@
+driver:
+  customize:
+    cableconnected1: 'on'
+  name: vagrant
+provisioner:
+  name: chef_zero
+  product_name: cinc
+  product_version: 17.10.0
