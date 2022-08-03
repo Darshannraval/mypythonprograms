@@ -22,6 +22,16 @@ then
        sudo rpm -e cinc
        sudo rpm -i cinc-17.10.0-1.el7.x86_64.rpm
      fi
+elif [ "$os_name" = "Rocky" ]
+then
+     echo "system is rocky"
+     os_versionid=$(cat /etc/os-release | awk -F '=' '/^VERSION_ID/{print $2}' | awk '{print $1}' | tr -d '"')
+     if [ "$os_versionid" = "8.5" ]
+     then
+       wget http://downloads.cinc.sh/files/stable/cinc/17.10.0/el/8/cinc-17.10.0-1.el8.x86_64.rpm
+       sudo rpm -e cinc
+       sudo rpm -i cinc-17.10.0-1.el8.x86_64.rpm
+     fi
 else
     echo "unsupported os"
 fi
