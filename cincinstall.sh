@@ -12,7 +12,7 @@ then
        sudo dpkg -r cinc
        sudo dpkg -i cinc_17.10.0-1_amd64.deb
      fi
-elif [ "os_name" = "CentOS" ]
+elif [ "$os_name" = "CentOS" ]
 then
      echo "system is centos"
      os_versionid=$(cat /etc/os-release | awk -F '=' '/^VERSION_ID/{print $2}' | awk '{print $1}' | tr -d '"')
